@@ -3,8 +3,8 @@
 	<information>
 		<name>阅读统计_by ZKB</name>
 		<version>1.0</version>
-		<author>Tutuu</author>
-		<id>duration</id>
+		<author>ZKB</author>
+		<id>Reading Records</id>
 	</information>
 	<menus>
 		<menu type="json" dynamic="true">menu.json</menu>
