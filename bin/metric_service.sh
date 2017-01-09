@@ -39,4 +39,38 @@ done
 	                                        
 echo $CURRENT > $BASEDIR/etc/metrics_generic_current
 
+
+# here start collecting the book opening and closing msg from /var/log/messages 
+# and /var/local/messages
+# the process seems just the same as above 
+YOUNGEST_M=`cat /var/local/log/messages_youngest`
+OLDEST_M=`cat /var/local/log/messages_oldest`
+if [ -e $BASEDIR/etc/metrics_generic_current_M ]; then
+	CURRENT_M=`cat $BASEDIR/etc/metrics_generic_current_M`
+	if [ $CURRENT_M -lt $OLDEST_M ]; then
+		date >>  $BASEDIR/log/log_M.txt
+		echo WARNNING: Data maybe lost:cur $CURRENT_M old $OLDEST_M >> $BASEDIR/log/log_M.txt
+		CURRENT_M=$OLDEST_M
+	fi
+	if [ $CURRENT_M -gt $YOUNGEST_M ]; then
+		exit 0
+	fi
+else
+	date >> $BASEDIR/log/log_M.txt
+	echo INFO: Create metrics_generic_current_M >> $BASEDIR/log/log_M.txt
+	CURRENT_M=$OLDEST_M
+fi
+while [ $CURRENT_M -le $YOUNGEST_M ]
+do
+	FILE=`echo $CURRENT_M | awk '{printf "/var/local/log/messages_%08d*", $1}'`
+	zcat $FILE | grep reader.activeDuration | awk 'BEGIN{FS=","}{print $1,$3,$6,$7,$8}' \
+	>> $BASEDIR/log/metrics_generic_result_M
+	# $1,$3,$6,$7,$8
+	# asin,modified time(created time),length,last time,last positiom
+	# asin,size,modified time,type,lang,length,access time,last position,
+	CURRENT=`expr $CURRENT_M + 1 |awk '{printf "%08d", $1}'`
+done
+echo $CURRENT_M > $BASEDIR/etc/metrics_generic_current_M
+
+
 exit 0
