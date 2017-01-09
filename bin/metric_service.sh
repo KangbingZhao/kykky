@@ -63,12 +63,12 @@ fi
 while [ $CURRENT_M -le $YOUNGEST_M ]
 do
 	FILE=`echo $CURRENT_M | awk '{printf "/var/local/log/messages_%08d*", $1}'`
-	zcat $FILE | grep reader.activeDuration | awk 'BEGIN{FS=","}{print $1,$3,$6,$7,$8}' \
+	zcat $FILE | grep ReaderInfo | awk 'BEGIN{FS=","}{print $1,$3,$6,$7,$8}' \
 	>> $BASEDIR/log/metrics_generic_result_M
 	# $1,$3,$6,$7,$8
 	# asin,modified time(created time),length,last time,last positiom
 	# asin,size,modified time,type,lang,length,access time,last position,
-	CURRENT=`expr $CURRENT_M + 1 |awk '{printf "%08d", $1}'`
+	CURRENT_M=`expr $CURRENT_M + 1 |awk '{printf "%08d", $1}'`
 done
 echo $CURRENT_M > $BASEDIR/etc/metrics_generic_current_M
 

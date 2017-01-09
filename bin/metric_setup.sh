@@ -6,7 +6,7 @@ metric_enable()
 	cat /etc/crontab/root |grep metrics_service.sh
 	if [ $? -eq 1 ] ; then
 		mntroot rw
-		echo "*/30 * * * * /mnt/us/extensions/metrics/bin/metrics_service.sh " >> /etc/crontab/root
+		echo "*/30 * * * * /mnt/us/extensions/kyky/bin/metrics_service.sh " >> /etc/crontab/root
 		mntroot ro
 	fi
 	touch ./etc/enable
