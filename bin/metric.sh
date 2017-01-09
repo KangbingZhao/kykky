@@ -1,5 +1,5 @@
 #!/bin/bash
-BASEDIR=/mnt/us/extensions/metrics
+BASEDIR=/mnt/us/extensions/kyky
 TOTAL=0
 TODAY=0
 TODAYTIME=`date +%s -d 00:00`

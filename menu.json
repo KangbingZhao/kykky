@@ -13,7 +13,7 @@
 		},
 		{
 			"name": "开启阅读统计",
-			"if": "\"/mnt/us/extensions/metrics/etc/enable\"  -f!",
+			"if": "\"/mnt/us/extensions/kyky/etc/enable\"  -f!",
 			"action": "./bin/metric_setup.sh",
 			"params": "enable",
 			"exitmenu": false,
@@ -23,7 +23,7 @@
 		},
 		{
 			"name": "禁用阅读统计",
-			"if": "\"/mnt/us/extensions/metrics/etc/enable\"  -f",
+			"if": "\"/mnt/us/extensions/kyky/etc/enable\"  -f",
 			"action": "./bin/metric_setup.sh",
 			"params": "disable",
 			"exitmenu": false,

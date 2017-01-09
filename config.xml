@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension>
 	<information>
-		<name>阅读统计</name>
+		<name>阅读统计_by ZKB</name>
 		<version>1.0</version>
 		<author>Tutuu</author>
 		<id>duration</id>

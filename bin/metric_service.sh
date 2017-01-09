@@ -1,5 +1,5 @@
 #!/bin/bash
-BASEDIR=/mnt/us/extensions/metrics
+BASEDIR=/mnt/us/extensions/kyky
 YOUNGEST=`cat /var/local/log/metrics_generic_youngest`
 OLDEST=`cat /var/local/log/metrics_generic_oldest`
 
