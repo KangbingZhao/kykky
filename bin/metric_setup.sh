@@ -27,6 +27,7 @@ metric_reset()
 {
 	rm -f ./log/*
 	rm -f ./etc/metrics_generic_current
+	rm -f ./etc/metrics_generic_current_M
 	usleep 150000
 	eips 15 35 "Reset success"
 	usleep 1000000
