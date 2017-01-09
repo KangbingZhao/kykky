@@ -24,6 +24,16 @@ do
 	FILE=`echo $CURRENT | awk '{printf "/var/local/log/metrics_generic_%08d*", $1}'`
 	zcat $FILE | grep reader.activeDuration | awk 'BEGIN{FS=","}{print $2,$7}' \
 	>> $BASEDIR/log/metrics_generic_result
+	# here add the book opening and closing message to \
+	# metric_generic_result_open(opening msg) and
+	# metric_generic_result_close(closing msg)
+	# first column: time, second column: ASIN=***
+	zcat $FILE |grep EndActions,BookClose,HasNetwork |awk 'BEGIN{FS=","}{print $2,$9}' \
+	>> $BASEDIR/log/metrics_generic_result_close
+	zcat $FILE |grep EndActions,BookOpen,HasNetwork |awk 'BEGIN{FS=","}{print $2,$9}' \
+	>> $BASEDIR/log/metrics_generic_result_open
+ 
+
 	CURRENT=`expr $CURRENT + 1 |awk '{printf "%08d", $1}'`
 done
 	                                        
