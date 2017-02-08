@@ -67,10 +67,10 @@ analyze $BASEDIR/log/metrics_generic_temp
 
 
 usleep 150000
-eips 13 30 "`printf "Total:%4dH %02dM %02dS" $((TOTAL/3600)) $((TOTAL%3600/60)) $((TOTAL%60))`"
-usleep 150000
 eips 13 32 "`printf "Today:%4dH %02dM %02dS" $((TODAY/3600)) $((TODAY%3600/60)) $((TODAY%60))`"
 usleep 150000
-eips 13 34 "`printf "Week :%4dH %02dM" $((WEEK/3600)) $((WEEK%3600/60)) `"
+eips 13 34 "`printf "Week :%4dH %02dM %02dS" $((WEEK/3600)) $((WEEK%3600/60)) $((WEEK%60))`"
 usleep 150000
-eips 13 36 "`printf "Month:%4dH %02dM" $((MONTH/3600)) $((MONTH%3600/60))`"
+eips 13 36 "`printf "Month:%4dH %02dM %02dS" $((MONTH/3600)) $((MONTH%3600/60)) $((MONTH%60))`"
+usleep 150000
+eips 13 38 "`printf "Total:%4dH %02dM %02dS" $((TOTAL/3600)) $((TOTAL%3600/60)) $((TOTAL%60))`"
