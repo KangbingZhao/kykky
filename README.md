@@ -13,4 +13,4 @@ Know your kindle, Know Yourself---a kindle extension to record your reading stat
 # INSTALLATION
 1. jailbreak
 2. install KUAL
-3. download and unzip this project, and copy the "kyky" directory to your kindle's "/mnt/us/extensions/"
+3. download and unzip this project, and copy the "kykky" directory to your kindle's "/mnt/us/extensions/"

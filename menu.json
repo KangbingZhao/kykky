@@ -45,7 +45,6 @@
 			"action": "./bin/showinfo.sh",
 			"exitmenu": false,
 			"refresh": false,
-			"status": false,
 			"internal": "关于"
 		}
 		]
