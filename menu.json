@@ -1,7 +1,6 @@
 {
 	"items": [
 	{
-		"name": "阅读统计_by ZKB",
 		"priority": -998,
 		"items": [		
 		{
@@ -39,6 +38,14 @@
 			"refresh": false,
 			"status": false,
 			"internal": "清除统计记录"
+		},
+		{
+			"name": "关于",
+			"action": "./bin/showinfo.sh",
+			"exitmenu": false,
+			"refresh": false,
+			"status": false,
+			"internal": "关于"
 		}
 		]
 	}
