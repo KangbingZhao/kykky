@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension>
 	<information>
-		<name>阅读统计_by ZKB</name>
+		<name>Kykky-阅读统计</name>
 		<version>1.0</version>
-		<author>ZKB</author>
+		<author>K.B.ZHAO</author>
 		<id>Reading Records</id>
 	</information>
 	<menus>

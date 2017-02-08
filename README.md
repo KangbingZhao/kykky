@@ -1,5 +1,5 @@
-# kyky
-Know your kindle, Know You---a kindle extension to record your reading statistics 
+# KYKKY
+Know your kindle, Know Yourself---a kindle extension to record your reading statistics 
 
 # FEATURES
 1. show your today/this week/this month and total reading time

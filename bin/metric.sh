@@ -1,5 +1,5 @@
 #!/bin/bash
-BASEDIR=/mnt/us/extensions/kyky
+BASEDIR=/mnt/us/extensions/kykky
 TOTAL=0
 TODAY=0
 WEEK=0
