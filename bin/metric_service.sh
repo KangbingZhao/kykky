@@ -19,7 +19,7 @@ else
 	CURRENT=$OLDEST
 fi
 
-while [ $CURRENT -le $YOUNGEST ]
+while [ $CURRENT -lt $YOUNGEST ]
 do
 	FILE=`echo $CURRENT | awk '{printf "/var/local/log/metrics_generic_%08d*", $1}'`
 	zcat $FILE | grep reader.activeDuration | awk 'BEGIN{FS=","}{print $2,$7}' \
@@ -36,6 +36,14 @@ do
 
 	CURRENT=`expr $CURRENT + 1 |awk '{printf "%08d", $1}'`
 done
+#由于metrics_generic不断被压缩并追加到YOUNGEST中，
+#每次把以YOUNGEST内容覆盖temp
+if [ $CURRENT -eq $YOUNGEST ]; then
+	FILE=`echo $CURRENT | awk '{printf "/var/local/log/metrics_generic_%08d*", $1}'`
+	zcat $FILE | grep reader.activeDuration | awk 'BEGIN{FS=","}{print $2,$7}' \
+	> $BASEDIR/log/metrics_generic_temp
+fi
+
 	                                        
 echo $CURRENT > $BASEDIR/etc/metrics_generic_current
 
