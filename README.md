@@ -6,8 +6,8 @@ Know your kindle, Know Yourself---a kindle plugin to record your reading statist
 show your today/yesterday/this week/this month and total reading time
 
 #SCREENSHOTS
-![screenshot](https://github.com/KangbingZhao/kykky/raw/master/screenshots/show_time.png)
-<img src="https://github.com/KangbingZhao/kykky/raw/master/screenshots/show_time.png" height="300px">
+
+<img src="https://github.com/KangbingZhao/kykky/raw/master/screenshots/show_time.png" height="500px">
 
 # TODO
 1. show the reading progress(percent) for your reading books
