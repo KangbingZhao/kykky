@@ -7,6 +7,7 @@ show your today/yesterday/this week/this month and total reading time
 
 #SCREENSHOTS
 ![screenshot](https://github.com/KangbingZhao/kykky/raw/master/screenshots/show_time.png)
+<img src="https://github.com/KangbingZhao/kykky/raw/master/screenshots/show_time.png" height="300px">
 
 # TODO
 1. show the reading progress(percent) for your reading books
