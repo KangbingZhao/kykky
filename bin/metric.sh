@@ -9,7 +9,7 @@ WEEK=0
 MONTH=0
 TODAYTIME=`date +%s -d 00:00`
 YESTERDAYTIME=$((TODAYTIME-24*60*60))
-WEEKTIME=$((TODAYTIME-(`date +%w`-1)*24*60*60)) #星期一零点
+WEEKTIME=$((TODAYTIME-((`date +%w`+6)%7)*24*60*60)) #星期一零点
 MONTHTIME=$((TODAYTIME-(`date +%e` -1)*24*60*60)) #本月1号零点
 analyze() # 阅读时间统计
 {
