@@ -1,5 +1,5 @@
 #!/bin/sh
-BASEDIR=/mnt/us/extensions/metrics
+BASEDIR=/mnt/us/extensions/kykky
 
 ## enable
 metric_enable()

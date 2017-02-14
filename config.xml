@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension>
 	<information>
-		<name>阅读统计</name>
-		<version>1.2</version>
-		<author>Tutuu</author>
+		<name>Kykky-阅读统计</name>
+		<version>1.0</version>
+		<author>KB.Zhao</author>
 		<id>duration</id>
 	</information>
 	<menus>
