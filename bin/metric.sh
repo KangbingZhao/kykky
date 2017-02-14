@@ -1,6 +1,7 @@
 #!/bin/bash
-./metric_service.sh
 BASEDIR=/mnt/us/extensions/kykky
+bash $BASEDIR/bin/metric_service.sh
+
 TOTAL=0
 YESTERDAY=0
 TODAY=0
