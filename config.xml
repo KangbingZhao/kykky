@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension>
 	<information>
-		<name>Kykky-阅读统计</name>
-		<version>1.0</version>
-		<author>K.B.ZHAO</author>
-		<id>Reading Records</id>
+		<name>阅读统计</name>
+		<version>1.2</version>
+		<author>Tutuu</author>
+		<id>duration</id>
 	</information>
 	<menus>
 		<menu type="json" dynamic="true">menu.json</menu>

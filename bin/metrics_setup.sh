@@ -1,14 +1,13 @@
 #!/bin/sh
+BASEDIR=/mnt/us/extensions/metrics
 
 ## enable
 metric_enable()
 {
-	cat /etc/crontab/root |grep metrics_service.sh
-	if [ $? -eq 1 ] ; then
-		mntroot rw
-		echo "*/30 * * * * /mnt/us/extensions/kykky/bin/metric_service.sh " >> /etc/crontab/root
-		mntroot ro
-	fi
+	mntroot rw
+	mv /etc/syslog-ng/syslog-ng.conf $BASEDIR/etc/syslog-ng.conf.bak
+	cp $BASEDIR/etc/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf
+	mntroot ro
 	touch ./etc/enable
 }
 
@@ -16,18 +15,17 @@ metric_enable()
 metric_disable()
 {
 	mntroot rw
-	sed -i '/metric_service.sh/d' /etc/crontab/root
+	rm -f /etc/syslog-ng/syslog-ng.conf
+	cp $BASEDIR/etc/syslog-ng.conf.bak /etc/syslog-ng/syslog-ng.conf
 	mntroot ro
 	rm -f ./etc/enable
 }
 
 
 ## reset
-metric_reset()
+metric_reset() 
 {
 	rm -f ./log/*
-	rm -f ./etc/metrics_generic_current
-	rm -f ./etc/metrics_generic_current_M
 	usleep 150000
 	eips 15 35 "Reset success"
 	usleep 1000000

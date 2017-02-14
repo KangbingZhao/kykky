@@ -1,20 +1,20 @@
 {
 	"items": [
 	{
-		"name": "Kykky-阅读统计",
+		"name": "阅读统计",
 		"priority": -998,
 		"items": [		
 		{
 			"name": "查看阅读统计",
-			"action": "./bin/metric.sh",
+			"action": "./bin/metrics.sh",
 			"exitmenu": false,
 			"refresh": false,
 			"internal": "查看阅读统计"			
 		},
 		{
 			"name": "开启阅读统计",
-			"if": "\"/mnt/us/extensions/kykky/etc/enable\"  -f!",
-			"action": "./bin/metric_setup.sh",
+			"if": "\"/mnt/us/extensions/metrics/etc/enable\"  -f!",
+			"action": "./bin/metrics_setup.sh",
 			"params": "enable",
 			"exitmenu": false,
 			"refresh": true,
@@ -23,8 +23,8 @@
 		},
 		{
 			"name": "禁用阅读统计",
-			"if": "\"/mnt/us/extensions/kykky/etc/enable\"  -f",
-			"action": "./bin/metric_setup.sh",
+			"if": "\"/mnt/us/extensions/metrics/etc/enable\"  -f",
+			"action": "./bin/metrics_setup.sh",
 			"params": "disable",
 			"exitmenu": false,
 			"refresh": true,
@@ -33,19 +33,12 @@
 		},
 		{
 			"name": "清除统计记录",
-			"action": "./bin/metric_setup.sh",
+			"action": "./bin/metrics_setup.sh",
 			"params": "reset",
 			"exitmenu": false,
 			"refresh": false,
 			"status": false,
 			"internal": "清除统计记录"
-		},
-		{
-			"name": "关于",
-			"action": "./bin/showinfo.sh",
-			"exitmenu": false,
-			"refresh": false,
-			"internal": "关于"
 		}
 		]
 	}
