@@ -1,6 +1,8 @@
 # KYKKY
 Know your kindle, Know Yourself---a kindle extension to record your reading statistics 
 
+>[NOTICE!] This branch is deprecated, because a new and better method is implented.
+
 # FEATURES
 1. show your today/this week/this month and total reading time
 2. show the reading progress(percent) for your reading books
