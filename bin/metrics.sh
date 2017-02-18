@@ -18,7 +18,7 @@ awk 'BEGIN{FS=","}{print $2,$7}' > tpipe
 while read ENDTIME DURATION
 do
 	DURATION=$((DURATION/1000))
-	STARTTIME=$((ENDTIME+DURATION))
+	STARTTIME=$((ENDTIME-DURATION))
 	TOTAL=$((TOTAL+DURATION))
 	#①...... □ □ □ □ □ □ □ □ □ □ 00:00 ......  today +=  0
 	#②...... □ □ □ □ □ 00:00 ■ ■ ■ ■ ■ ......  today +=  5
